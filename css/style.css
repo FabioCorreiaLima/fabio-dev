@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;0,700;0,900;1,500;1,700&display=swap');
+
+/**trabalhando com o corpo da pagina**/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+
+
+}
+
+body {
+    background-color: rgb(44, 43, 43);
+    width: 100%;
+}
+
+.container {
+    background-color: rgb(44, 43, 43);
+    background-image: url('../img/foto.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 80%;
+    width: 100%;
+    height: 100vh;
+}
+/**aplicando efito na tela junto com o js**/
+.cabecalho,
+.container,
+.logo,
+.texto,
+.container-form,
+.titulo {
+    visibility: hidden;
+}
+
+/*trabalhando com posiçao do inicio, sobre, contato, projeto e logo.*/
+.header {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding-top: 2rem;
+    color: #fff;
+}
+
+/*trabalhando com o cabecalho*/
+.cabecalho {
+
+    display: flex;
+    gap: 4rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+/*tratando das ancoras*/
+.cabecalho a {
+    color: #fff;
+    font-size: 20px;
+}
+
+/*efeito ao passar o mouse no cabecalho*/
+.cabecalho a:hover {
+    background: transparent;
+    color: aqua;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/*posicionamento da logo importada*/
+.logo i {
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    color: white;
+    border: 1px solid rgb(202, 52, 52);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+
+}
+.logo{
+    padding: 20px auto;
+}
+
+.container-texto {
+    padding: 200px 0 0 200px;
+}
+
+.texto h1 {
+    color: rgb(35, 168, 35);
+    margin-top: 10px;
+    font-size: 3rem;
+}
+
+.texto h3 {
+    color: #fff;
+    margin-top: 10px;
+    font-weight: 300px;
+
+}
+
+.texto h2 {
+    color: rgb(35, 168, 35);
+    margin-top: 15px;
+    font-weight: 300;
+    font-size: 3rem;
+}
+
+.redes-sociais a {
+    padding: 10px;
+    color: rgb(231, 13, 13);
+    margin-top: 15px;
+    max-height: 15px;
+    font-size: 30px;
+}
+
+.sobre {
+    width: 90%;
+    padding: 100px 0 0 200px;
+}
+
+.sobre p {
+    font-size: 20px;
+    color: rgb(35, 168, 35);
+}
+.titulo {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    
+}
+.titulo h1 {
+    margin: 20px;
+    font-size: 3rem;
+    color: #fff;
+}
+
+.imagem{
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+}
+.imagem img{
+    border-radius: 50%;
+    border-bottom: #fff;
+}
+
+.container-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    color: #fff;
+}
+fieldset {
+    width: 40%;
+    border-radius: 30px;
+}
+
+form div {
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+
+}
+label{
+    font-size: 20px;
+}
+
+input{
+    background-color: cadetblue;
+    margin-top: 10px;
+    font-size: 25px;
+    color: black;
+    border-radius: 15px;
+}
+
+select, textarea{
+    margin-top: 10px;
+    font-size: 25px;
+    color: black;
+    border-radius: 15px;
+}
+
+select {
+    background-color: cadetblue;
+}
+
+button {
+    margin-top: 10px;
+    font-size: 25px;
+    border-radius: 15px;
+    background-color: black;
+    color: #fff;
+}
+.mensagem textarea{
+    background-color: bisque;
+    cursor: default;
+    resize: none;
+}
+.botao button:hover {
+    color: #000;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/*trabalhando com a responsividade do site*/
+@media screen and (max-width:1190px) {
+    .container {
+        background-size: contain;
+        background-position: 90%;
+    }
+    .container-texto{
+        padding: 200px 0 0 100px;
+    }
+    .titulo{
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0 0 90px;
+    }
+    #sobre {
+        padding: 100px 0 0 100px;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .texto h1{
+        font-size: 40px;
+    }
+    .texto h2{
+        font-size: 30px;
+    }
+    .container {
+        background-size:contain;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .container {
+        background-position: 95%;
+    }
+    .container-texto{
+        padding: 200px 0 0 100px;
+    }
+    .titulo{
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0 0 90px;
+    }
+    .texto h1{
+        font-size: 30px;
+    }
+    .texto h2{
+        font-size: 20px;
+    }
+    
+    #sobre {
+        padding: 100px 0 0 100px;
+    }
+}
+
+
+
+@media screen and (max-width:682px) {
+
+    .container {
+        background-image: url('../img/foto4.PNG');
+        background-size: 25%;
+        background-position: 50%;
+        background-position-y: 25%;
+        width: 90%;
+        height: 100vh;
+    }
+    .container-texto{
+        padding: 200px 0 0 100px;
+    }
+    .titulo{
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0 0 90px;
+    }
+    .texto h1{
+        font-size: 30px;
+    }
+    .texto h2{
+        font-size: 20px;
+    }
+    
+    #sobre {
+        padding: 100px 0 0 100px;
+    }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/scrollreveal"></script><!--importando SCROLL do javacript-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css"> <!--importando o css-->
+ 
+  <title>Minha pagina</title>
+ 
+</head>
+
+<body>
+  <div id="inicio" class="container">
+    <header class="header">
+      <div class="logo">
+        <i class="fa-solid fa-f"></i>
+        <!--importando logo-->
+      </div>
+      <div class="cabecalho">
+        <li>
+          <a href="#sobre">Sobre</a>
+        </li>
+        <li>
+          <a href="#projetos">Projetos</a>
+        </li>
+        <li>
+          <a href="#contato">Contato</a>
+        </li>
+      </div>
+    </header>
+    <div class="container-texto">
+      <div class="texto">
+        <h1>Bem vindo ao meu site!</h1>
+        <h2>Fábio Correia Lima</h2>
+        <br>
+        <h3>Minhas redes-sociais</h3>
+      </div>
+      <div class="redes-sociais">
+        <b></b>
+        <a href="https://www.facebook.com/profile.php?id=100045715382033" target="_blank"><i
+            class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/in/f%C3%A1bio-lima-051204234/" target="_blank"><i
+            class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+
+    </div>
+  </div>
+  <div>
+    <hr>
+  </div>
+  <div id="sobre" class="titulo">
+    <div class="imagem">
+      <img src="img/foto4.PNG" alt="Minha foto">
+    </div>
+    <h1>Sobre mim</h1>
+  </div>
+  <div id="sobre" class="sobre">
+    <p>Me chamo Fábio Correia Lima, tenho 24 anos atualmente trabalho como caseiro em um sítio.<br><br> Estou estudado
+      Engenharia de Software na Universidade de Vassouras em Maricá.<br><br> Gosto de sempre está aprendendo algo
+      novo.<br><br> Estudar programação através da faculdade tive a oportunidade de conhecer um mundo diferente da
+      tecnologia.</p>
+    <br>
+  </div>
+  <div>
+    <hr>
+  </div>
+  <div class="titulo">
+    <div class="imagem">
+      <img src="img/foto4.PNG" alt="Minha foto">
+    </div>
+    <div id="projetos">
+      <h1>Projetos</h1>
+    </div>
+  </div>
+
+  <div class="titulo">
+    <div class="imagem">
+      <img src="img/foto4.PNG" alt="Minha foto"> <!--imagem adicionada em cada conteudo-->
+    </div>
+    <div id="contato"> <!--id para rolar ao conteudo de contato-->
+      <h1>Contato</h1>
+    </div>
+  </div>
+  <div class="container-form">
+    <fieldset>
+      <form action="https://formsubmit.co/fabiocorreia455@gmail.com " method="post" >
+
+        <div class="nome">
+          <label for="nome" class="nome">Nome</label>
+          <input name="nome" type="text" id="nome"required><!--Usando required para preenchimento obrigatorio-->
+        </div>
+        <div class="email">
+          <label for="email" class="email">Email</label>
+          <input name="email" type="email" id="email" required>
+        </div>
+        <div class="Estado">
+          <label for="estado" class="Estado">Estado</label>
+          <select id="estado" onchange="gerarCidades();" required> <!--executando a funcao para regar a     cidade no js-->
+          <option></option>
+          <option value="SP">SP</option>
+          <option value="MG">MG</option>
+          <option value="RJ">RJ</option>
+          <option value="BA">BA</option>
+          </select>   
+        </div>
+        <div class="cidade">
+          <label for="cidade">Cidade</label>
+          <select id="cidade" required>
+          </select>
+        </div>
+        <div class="mensagem">
+          <label for="mensagem">mensagem</label>
+          <textarea name="Mensagem" id="mensagem" cols="30" rows="5"></textarea>
+        </div>
+        
+        <div class="botao">
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+    </fieldset>
+  </div>
+  <script src="JavaScript/script.js"></script>
+  <script src="JavaScript/fun.js"></script> <!--importando javascript-interno-->
+</body>
+
+</html>
