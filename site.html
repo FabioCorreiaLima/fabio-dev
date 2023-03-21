@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tabela de Episódios</title>
+	<style>
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-family: Arial, sans-serif;
+			padding: 20px;
+			background-color: #f2f2f2;
+		}
+		
+		.episode-card {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			width: 80%;
+			padding: 10px;
+			margin-bottom: 10px;
+			background-color: white;
+			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+		}
+		
+		.episode-card img {
+			height: 40px;
+			margin-right: 10px;
+		}
+		
+		.episode-card a {
+			color: blue;
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 16px;
+		}
+		
+		.episode-card a:hover {
+			color: navy;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<h1>Tabela de Episódios</h1>
+	<div class="container" id="tabela-episodios"></div>
+	<script>
+		fetch('https://api.consumet.org/anime/gogoanime/info/bleach-dub')
+		  .then(response => response.json())
+		  .then(data => {
+		    const episodeIds = data.episodes.map(episode => episode.id);
+		    const containerElement = document.querySelector('#tabela-episodios');
+		    data.episodes.forEach(episode => {
+		      const id = episode.id;
+		      let link = '';
+		      fetch(`https://api.consumet.org/anime/gogoanime/watch/${id}`)
+		        .then(response => response.json())
+		        .then(data => {
+		          link = data.sources[1].url;
+		          const card = document.createElement('div');
+		          card.className = 'episode-card';
+		          const linkImage = document.createElement('a');
+		          linkImage.href = link;
+		          const playIcon = document.createElement('img');
+		          playIcon.src = 'https://img.icons8.com/ios-filled/50/000000/play--v1.png';
+		          linkImage.appendChild(playIcon);
+		          const linkText = document.createElement('a');
+		          linkText.href = link;
+		          linkText.textContent = `Episódio ${id}`;
+		          card.appendChild(linkImage);
+		          card.appendChild(linkText);
+		          containerElement.appendChild(card);
+		        })
+		        .catch(error => console.error('Erro:', error));
+		    });
+		  })
+		  .catch(error => {
+		    console.error('Erro:', error);
+		  });
+	</script>
+</body>
+</html>
